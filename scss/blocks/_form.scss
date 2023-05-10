@@ -1,0 +1,105 @@
+.form {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.form__wrapper {}
+
+.form__img {
+  grid-column: 1 / 6;
+  align-self: end;
+
+}
+
+.form__right {
+  grid-column: 7 / 13;
+}
+
+.form__title {
+  margin-bottom: 32px;
+  color: #000;
+}
+
+.form__descr {
+  margin-bottom: 72px;
+  color: #000;
+}
+
+.input {}
+
+.form__inputs {
+  margin-bottom: 24px;
+}
+
+.form__input-wrapper {
+  display: block;
+  position: relative;
+  max-width: 562px;
+
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.form__input {
+  width: 100%;
+  transition: all 0.2s ease-in;
+
+  &:focus {
+    padding-top: 12.5px;
+    border-color: $form-focus;
+  }
+
+  &:focus~.form__label {
+    top: -1em;
+    font-size: 12px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: $main-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: $text-main;
+  transition: all 0.2s ease-in;
+}
+
+.form__button {
+  margin-bottom: 40px;
+}
+
+.form__download-wrapper {
+  display: flex;
+}
+
+.form__download {
+  position: relative;
+  width: 121px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  transition: transform 0.2s ease-in;
+
+  &--app-store {
+    background-image: url(../../img/app-store.png);
+  }
+
+  &--google-play {
+    background-image: url(../../img/google-play.png);
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}

@@ -1,0 +1,293 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $main-regular;
+  color: $base-black;
+  background-color: $bg-color;
+}
+
+img {
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+em {
+  font-style: normal;
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+h1 {
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 120%;
+  color: $base-black;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+h2 {
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 66px;
+  color: $base-black;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+h3 {
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+strong {
+  display: block;
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+.main-text {
+  font-family: $main-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: $text-main;
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+.btn {
+  position: relative;
+  font-family: $main-regular;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: $text-main;
+  transition: color .3s ease-in;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: $text-main;
+    // transform: scaleX(1);
+    transition: transform .3s ease-in, background-color .3s ease-in;
+    transform-origin: right bottom;
+  }
+
+  &:hover {
+    color: $accent;
+  }
+
+  &:hover::before {
+    background-color: $accent;
+  }
+
+  &::selection {
+    background: $accent;
+    color: $text-main
+  }
+}
+
+.button {
+  padding: 12px 20px;
+  background-color: $text-main;
+  color: #fff;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    background-color: $accent;
+    color: $text-main;
+  }
+
+  &:active {
+    background-color: $accent-active;
+  }
+
+  &:disabled {
+    background-color: $btn-disabled;
+    color: $btn-disabled-text;
+  }
+}
+
+.link {
+  position: relative;
+  font-family: $main-regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: $text-main;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: right bottom;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left bottom;
+
+  }
+}
+
+.input {
+
+  padding-bottom: 12.5px;
+  border-bottom: 1px solid $text-main;
+}
+
+.container {
+  $padding: 30px;
+  max-width: calc(1376px + $padding * 2);
+  padding: 0 $padding;
+  margin: 0 auto;
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.grid-8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width : 1200px) {
+  h3 {
+    font-size: 24px;
+    line-height: 1.375;
+  }
+}
+
+
+@media only screen and (max-width : 1024px) {
+
+  h1 {
+    font-size: 64px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.392;
+  }
+}
+
+@media only screen and (max-width : 900px) {
+  h1 {
+    font-size: 42px;
+  }
+}
+
+
+@media only screen and (max-width : 800px) {
+  em {
+    font-size: 16px;
+  }
+
+  h3 {}
+}
+
+@media only screen and (max-width : 700px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+
+  .container {
+    $padding: 16px;
+    max-width: calc(1376px + $padding * 2);
+    padding: 0 $padding;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+
+  em {
+    font-style: 16px;
+    line-height: 22.4px;
+  }
+
+  strong {
+    font-size: 24px;
+    line-height: 33px;
+  }
+}
