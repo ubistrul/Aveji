@@ -9,6 +9,10 @@ let ariaExpanded = menuBtn.getAttribute('aria-expanded')
 //   mobileMenu.classList.add('menu-closed');
 // }
 
+function getTopToMenu() {
+  mobileMenu.style.top = header.offsetHeight + "px";
+}
+
 //* Функция трансформации бургер-меню
 function burgerToggle() {
   burgerLineTop.classList.toggle('header__burger-line--top-active');
@@ -21,46 +25,51 @@ function menuExpandedToggle() {
   menuBtn.setAttribute('aria-expanded', !ariaExpanded);
 }
 
-menuBtn.addEventListener('click', function () {
-  burgerToggle()
-  menuExpandedToggle()
+//* Функция скролла к секциям
+function onMenuLinkClick(e) {
+  const menuLink = e.target;
+  if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+    const gotoBlock = document.querySelector(menuLink.dataset.goto);
+    const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - header.offsetHeight;
 
-  mobileMenu.classList.toggle('menu-closed');
-}
-)
+    window.scrollTo({
+      top: gotoBlockValue,
+      behavior: 'smooth'
+    })
 
-//** */
-
-const menuLinks = document.querySelectorAll('.header__mobile-nav-link[data-goto]')
-if (menuLinks.length > 0) {
-  menuLinks.forEach(menuLink => {
-    menuLink.addEventListener('click', onMenuLinkClick);
-
-  })
-
-  function onMenuLinkClick(e) {
-    const menuLink = e.target;
-    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-      const gotoBlock = document.querySelector(menuLink.dataset.goto);
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - header.offsetHeight;
-      // console.log(gotoBlock);
-      // console.log(gotoBlockValue);
-      // console.log(scrollY)
-
-      window.scrollTo({
-
-        top: gotoBlockValue,
-        behavior: 'smooth'
-      })
-
-      e.preventDefault()
-
-      burgerToggle()
-      menuExpandedToggle()
-      mobileMenu.classList.toggle('menu-closed');
-
-    }
+    e.preventDefault()
   }
 }
 
-console.log(header)
+menuBtn.addEventListener('click', function () {
+  burgerToggle()
+  menuExpandedToggle()
+  getTopToMenu()
+  mobileMenu.classList.toggle('menu-closed');
+})
+
+//** Меню-линки и обработчик событий по клику на них */
+
+function menusLinksEvents(links) {
+  if (links.length > 0) {
+    links.forEach(menuLink => {
+      menuLink.addEventListener('click', function (e) {
+        if (links == mobileMenuLinks) {
+          onMenuLinkClick(e);
+          burgerToggle();
+          menuExpandedToggle();
+          mobileMenu.classList.toggle('menu-closed');
+        }
+        else {
+          onMenuLinkClick(e);
+        }
+      })
+    })
+  }
+}
+
+const mobileMenuLinks = document.querySelectorAll('.header__mobile-nav-link[data-goto]');
+const desktopMenuLinks = document.querySelectorAll('.header__nav-link[data-goto]');
+
+menusLinksEvents(mobileMenuLinks);
+menusLinksEvents(desktopMenuLinks);

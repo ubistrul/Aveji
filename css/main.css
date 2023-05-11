@@ -903,6 +903,7 @@ strong::selection {
   padding: 64px 0;
   background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.75) 75%, rgba(0, 212, 255, 0) 100%);
   transition: all 0.2s ease-in;
+  z-index: 9999;
 }
 
 .header__mobile-nav-wrp {
