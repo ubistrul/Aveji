@@ -5,10 +5,7 @@ const mobileMenu = document.querySelector('.header__mobile-menu')
 const header = document.querySelector('.header')
 let ariaExpanded = menuBtn.getAttribute('aria-expanded')
 
-// if (!mobileMenu.classList.contains('menu-closed')) {
-//   mobileMenu.classList.add('menu-closed');
-// }
-
+//* Функция добавления свойства top ткущей шапки к мобильному меню
 function getTopToMenu() {
   mobileMenu.style.top = header.offsetHeight + "px";
 }
@@ -25,7 +22,7 @@ function menuExpandedToggle() {
   menuBtn.setAttribute('aria-expanded', !ariaExpanded);
 }
 
-//* Функция скролла к секциям
+//*! Функция скролла к секциям
 function onMenuLinkClick(e) {
   const menuLink = e.target;
   if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
@@ -41,6 +38,7 @@ function onMenuLinkClick(e) {
   }
 }
 
+//*! Обработка клика по кнопке-бургера
 menuBtn.addEventListener('click', function () {
   burgerToggle()
   menuExpandedToggle()
@@ -48,8 +46,11 @@ menuBtn.addEventListener('click', function () {
   mobileMenu.classList.toggle('menu-closed');
 })
 
-//** Меню-линки и обработчик событий по клику на них */
+//*! Меню-линки и обработчик событий по клику на них */
+const mobileMenuLinks = document.querySelectorAll('.header__mobile-nav-link[data-goto]');
+const desktopMenuLinks = document.querySelectorAll('.header__nav-link[data-goto]');
 
+//* Функция обработчика событий по клику на ссылки в меню
 function menusLinksEvents(links) {
   if (links.length > 0) {
     links.forEach(menuLink => {
@@ -67,9 +68,6 @@ function menusLinksEvents(links) {
     })
   }
 }
-
-const mobileMenuLinks = document.querySelectorAll('.header__mobile-nav-link[data-goto]');
-const desktopMenuLinks = document.querySelectorAll('.header__nav-link[data-goto]');
 
 menusLinksEvents(mobileMenuLinks);
 menusLinksEvents(desktopMenuLinks);
