@@ -114,7 +114,7 @@
   }
 
   .footer__social-link {
-    font-size: 16px;
+    font-size: 18px;
   }
 
 }
@@ -361,53 +361,53 @@
 
   //? Footer 
 
-  .footer {
-    padding-bottom: 20px;
-  }
+  // .footer {
+  //   padding-bottom: 20px;
+  // }
 
-  .footer__wrapper {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 0px;
-  }
+  // .footer__wrapper {
+  //   align-items: center;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   flex-direction: column;
+  //   gap: 0px;
+  // }
 
-  .footer__copyright {
-    text-align: center;
+  // .footer__copyright {
+  //   text-align: center;
 
-    order: 2;
+  //   order: 2;
 
-    & br {
-      margin-bottom: 4px;
-    }
-  }
+  //   & br {
+  //     margin-bottom: 4px;
+  //   }
+  // }
 
-  .footer__slash {
-    display: none;
-  }
+  // .footer__slash {
+  //   display: none;
+  // }
 
-  .footer__link-wrapper {
-    order: 1;
-  }
+  // .footer__link-wrapper {
+  //   order: 1;
+  // }
 
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 28px;
-  }
+  // .footer__links {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   margin-bottom: 28px;
+  // }
 
-  .footer__link {
-    &:not(:last-child) {
-      margin-bottom: 8px;
-    }
-  }
+  // .footer__link {
+  //   &:not(:last-child) {
+  //     margin-bottom: 8px;
+  //   }
+  // }
 
-  .footer__social-list {
-    margin-bottom: 24px;
-    order: 0;
-  }
+  // .footer__social-list {
+  //   margin-bottom: 24px;
+  //   order: 0;
+  // }
 
 
 }
