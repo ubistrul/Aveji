@@ -785,10 +785,10 @@ strong::selection {
   transition: transform 0.2s ease-in;
 }
 .form__download--app-store {
-  background-image: url(../../img/app-store.png);
+  background-image: url(../img/app-store.png);
 }
 .form__download--google-play {
-  background-image: url(../../img/google-play.png);
+  background-image: url(../img/google-play.png);
 }
 .form__download:not(:last-child) {
   margin-right: 8px;
