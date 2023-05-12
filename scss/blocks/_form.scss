@@ -88,11 +88,11 @@
   transition: transform 0.2s ease-in;
 
   &--app-store {
-    background-image: url(../../img/app-store.png);
+    background-image: url(../img/app-store.png);
   }
 
   &--google-play {
-    background-image: url(../../img/google-play.png);
+    background-image: url(../img/google-play.png);
   }
 
   &:not(:last-child) {
