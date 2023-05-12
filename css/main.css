@@ -711,7 +711,11 @@ strong::selection {
 
 .form__img {
   grid-column: 1/6;
-  align-self: end;
+  align-self: stretch;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }
 
 .form__right {
