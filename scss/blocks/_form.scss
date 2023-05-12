@@ -7,8 +7,9 @@
 
 .form__img {
   grid-column: 1 / 6;
-  align-self: end;
-
+  align-self: stretch;
+  object-fit: cover;
+  object-position: left;
 }
 
 .form__right {
