@@ -479,6 +479,12 @@ strong::selection {
   grid-column: 7/13;
   grid-row: 2 span;
 }
+.hero__img-1 picture {
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .hero__img-1 img {
   max-width: 100%;
   height: 100%;
@@ -597,7 +603,7 @@ strong::selection {
   height: 100%;
 }
 
-.projects__img {
+.projects__img, .pro {
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;

@@ -41,7 +41,8 @@
 
 }
 
-.projects__img {
+.projects__img,
+.projects__img &picture {
   object-fit: cover;
   overflow: hidden;
   width: 100%;
